@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ball Knowledge</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wordmark">
+      <span class="dot"></span>
+      BALL<span class="thin">KNOWLEDGE</span>
+    </div>
+    <div class="status" id="status">connecting…</div>
+  </header>
+
+  <main class="stage">
+    <section class="screen" id="screen">
+      <video id="video" autoplay muted playsinline></video>
+
+      <div class="screen-empty" id="screenEmpty">
+        <div class="screen-empty-inner">
+          <h1>Share the match.</h1>
+          <p>Pick the tab or window playing the game. Everything stays on your machine — the video never leaves this browser.</p>
+          <button class="btn btn-primary" id="shareBtn">Share screen</button>
+          <button class="btn btn-ghost" id="skipShareBtn">Skip — just show me the agent</button>
+        </div>
+      </div>
+
+      <div class="scoreboard" id="scoreboard" hidden>
+        <span class="sb-team" id="sbHome">ARG</span>
+        <span class="sb-score" id="sbScore">0-0</span>
+        <span class="sb-team" id="sbAway">EGY</span>
+        <span class="sb-clock" id="sbClock">0'</span>
+      </div>
+    </section>
+
+    <aside class="rail">
+      <div class="matchbar">
+        <div class="matchbar-line" id="matchTitle">loading fixture…</div>
+        <div class="matchbar-sub" id="matchRef"></div>
+      </div>
+
+      <div class="transport">
+        <button class="tbtn" id="playBtn" title="Play / pause">▶</button>
+        <input type="range" id="scrub" min="0" max="96" value="0" step="1" />
+        <span class="tclock" id="tclock">0'</span>
+        <select id="speed" title="Clock speed">
+          <option value="1">1×</option>
+          <option value="15">15×</option>
+          <option value="30" selected>30×</option>
+          <option value="60">60×</option>
+        </select>
+      </div>
+      <div class="markers" id="markers"></div>
+      <button class="jump" id="jumpBtn">Jump to the moment everyone argued about →</button>
+
+      <div class="feed" id="feed">
+        <div class="feed-hint">Press play. The agent calls the match as it happens, and flags anything contested.</div>
+      </div>
+
+      <form class="ask" id="askForm">
+        <input
+          id="askInput"
+          type="text"
+          autocomplete="off"
+          placeholder="Why did the referee not give a penalty?"
+        />
+        <button type="submit" id="askBtn">Ask</button>
+      </form>
+    </aside>
+  </main>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
